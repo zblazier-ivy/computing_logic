@@ -10,10 +10,10 @@ define cubic_inches_per_foot = 1728
 
 
     // gather user input in inches
-    input ref_model
-    input ref_width
-    input ref_depth
-    input ref_height
+    input ref_model = "Please enter the model name:"
+    input ref_width = "Please enter the width (in inches):"
+    input ref_depth = "Please enter the depth (in inches):"
+    input ref_height = "Please enter the height (in inches):"
 
     // execute processes of finding cubit feet
     ref_capacity = (ref_width * ref_depth * ref_height) / cubic_inches_per_foot

@@ -6,8 +6,8 @@ start
 define account_balance, over_drawn_fee, num_times_over_drawn
 
 // gather user information
-input account_balance
-input num_times_over_drawn
+input account_balance = "Input account balance:"
+input num_times_over_drawn = "Input number of times over drawn:"
 
 // process the information
 over_drawn_fee = (account_balance * .01) + (num_times_over_drawn * 5)
