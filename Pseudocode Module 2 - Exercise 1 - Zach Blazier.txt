@@ -1,0 +1,24 @@
+// this pseudocode calculates the capacity of a 
+// refrigerator by gathering input from the user
+start
+
+// define variables
+define ref_model, ref_width, ref_depth, ref_height, ref_capacity
+
+// define cubic feet as a constant
+define cubic_inches_per_foot = 1728
+
+
+    // gather user input in inches
+    input ref_model
+    input ref_width
+    input ref_depth
+    input ref_height
+
+    // execute processes of finding cubit feet
+    ref_capacity = (ref_width * ref_depth * ref_height) / cubic_inches_per_foot
+
+// output result of cubic feet along with refrigerator 
+print "The " + ref_model + " has a capacity of " + ref_capacity + " cubic feet."
+
+end

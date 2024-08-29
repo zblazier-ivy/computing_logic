@@ -1,0 +1,21 @@
+// this pseudocode calculates a monthly checking account feet
+
+start
+
+// define variables 
+define account_balance, over_drawn_fee, num_times_over_drawn
+
+// gather user information
+input account_balance
+input num_times_over_drawn
+
+// process the information
+over_drawn_fee = (account_balance * .01) + (num_times_over_drawn * 5)
+account_balance = account_balance - over_drawn_fee
+
+// output results
+print "The fee is " + over_drawn_fee + "."
+print "Your new account balance is " + account_balance + "."
+print "Thanks for using this program"
+
+end
