@@ -1,0 +1,25 @@
+//looking up a word in the dictionary
+START
+
+// initialize variables
+SET target_word = "logic"
+SET current_page = "random_word"
+
+// loop through dictionary checking each time if you are on the right page
+// if you aren't start loop over.
+WHILE current_page is not equal to target_word      
+
+      // test conditions
+    IF current_page is before target_word THEN
+        PRINT "Turn to a later page in the dictionary"
+        SET current_page to word on this page
+    ELSE IF current_page is after target_word THEN
+        PRINT "Turn to an earlier page in the dictionary"
+        SET current page to word on this page
+    END IF
+
+END WHILE
+
+DISPLAY "Word was found on " + current_page " ."
+
+END

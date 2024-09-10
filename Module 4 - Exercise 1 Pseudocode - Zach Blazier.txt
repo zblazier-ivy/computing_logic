@@ -1,0 +1,24 @@
+START // guessing game
+
+// Set variables
+SET secret_number to random number between 1 and 100
+SET guess to 0
+
+// perform while to loop through guesses
+WHILE guess is not equal to 0
+    input "Guess a number between 1 and 100."
+    SET guess = input
+
+    // check if guess is correct
+    IF guess is less than secret_number THEN
+        "Too low.  Guess again."
+    ELSE IF guess is higher than secret number THEN
+        "Too high. Guess again."
+    ELSE 
+        "Correct!  You Win"
+
+    END IF
+END WHILE
+
+END
+
