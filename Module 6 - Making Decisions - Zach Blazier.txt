@@ -1,0 +1,96 @@
+start
+
+Declarations // declare variables
+    area_code = ""
+    phone_number = ""
+    total_text_messages = 0
+    sentinal_value = -1
+    overage_charge = 0
+    initial_overage_charge = .03
+    extra_overage_charge = .02
+    tax_rate = .14
+    tax_charged = 0
+    subtotal = 0
+    total = 0
+    base_fee = 5
+    customer_list = [] //array of values containing customer bill info
+    view_data_area_code = ""
+
+main() // main program
+
+collect_cust_info()
+calculate_overage()
+calculate_bill()
+diplay_bill()
+store_data()
+view_related_data()
+    
+end
+
+collect_cust_info() //collect customer information and escape if sentinal_value is entered
+while true:    
+    input area_code "Please enter your three digit area code: (input -1 to quit)"
+        if sentinal_value = -1
+            return
+    input phone_number "Please enter your seven digit phone number: "
+    input total_text_messages "Please enter your total number of text messages sent: "
+return
+
+calculate_overage() //calculate the overage charge
+    if total_text_messages > 300
+        overage_charge = (200 * initial_overage_charge) + (total_text_messages - 300) * extra_overage_charge
+    else if
+        total_text_messages = > 100
+            overage_charge = (total_text_messages - 100) * initial_overage_charge
+    else
+        overage_charge = 0
+return
+
+calculate_bill() // calculate other necessary information to present the bill
+    subtotal = base_fee + overage_charge
+    tax_charged = subtotal * tax_rate
+    total = subtotal + tax_charged
+return 
+
+display_bill() // display bill for the user to see
+    output "Area Code: " + area_code
+    output "Phone Number: " + phone_number
+    output "Total number of text messages sent: " + total_text_messages
+    output "Bill Details: "
+    output "Base Fee: " + base_fee
+    output "Overage Charge: " + overage_charge
+    output "Subtotal: " + subtotal
+    output "Taxes: " + tax_charged
+    output "Total: " + total
+return
+
+store_data() //store bill inforamtion for later retrieval
+    customer_list.append([area_code,phone_number,total_text_messages,base_fee,overage_charge,subtotal,tax_charged,total])
+return
+
+view_related_data() // allow customer to view other bills in the area code specified
+    while true:
+        input view_data_area_code = "Input your three digit area code to see customer data from your area (input -1 to quit)
+        if sentinal_value = -1
+            return
+        for customer in customer_list:
+            if view_data_area_code == customer[0] 
+                if customer[2] > 100 and customer[total] > 10
+                    output "Area Code: " + customer[0]
+                    output "Phone Number: " + customer[1]
+                    output "Total Messages: " + customer[2]
+                    output "Base Fee: " + customer[3]
+                    output "Overage Charge: " + customer[4]
+                    output "Subtotal: " + customer[5]
+                    output "Taxes: " + customer[6]
+                    output "Total: " + customer[7]
+            else
+                output "No data matches your criteria."
+return
+        
+    
+       
+
+    
+
+
