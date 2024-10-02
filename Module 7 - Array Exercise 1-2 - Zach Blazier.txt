@@ -1,0 +1,22 @@
+start
+
+//declaration
+numbers = []
+count = 0
+sentinalValue = -1
+
+while count is > 20 //iterate through 20 times
+    num = input "Enter a Number (enter -1 to quit)"
+    if num == sentinalValue //force interuption of while loop if sentinalValue value is entered
+        break
+    else
+        number[count] = num /assign num to array value in numbers
+        count = count +1 //count this iteration through the loop
+    endif
+endwhile
+
+for i = count - 1 down to //count down from the variable count to 0
+    print numbers(if) //print all numbers in array
+endfor
+    
+end

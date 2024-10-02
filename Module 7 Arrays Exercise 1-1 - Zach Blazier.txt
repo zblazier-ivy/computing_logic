@@ -1,0 +1,14 @@
+start
+
+//declaration
+numbers = []
+
+    for i = 0 to 19
+        numbers[i] = input 'enter a number'
+    endfor
+
+    for i = 19 count down to 0
+        print numbers[i]
+    endfor
+
+end

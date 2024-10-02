@@ -1,0 +1,42 @@
+start
+
+//declarations
+cupCoffeePrice = 2
+addInPrice = [0.89,0.25,0.59,1.50,1.75]
+addInProduct = ["Whipped cream","Cinnamon","Chocolate sauce","Amaretto","Irish whiskey"]
+addInChoice []
+addInSum = 0
+totalPrice = 0
+sentinelValue = -2
+
+//Show Menu at start of program
+print "Menu"
+print "Cup of Coffee:" + cupCoffeePrice
+for i = 0 to length(addInProduct) - 1 step 1
+    print [i] + "." + addInProduct[i] + " - "+ addInPrice[i]
+endfor
+
+//gather input for addins using while loop
+while addInChoice <> sentinelValue do 
+    addInChoice = print "Enter the corresponding number to your choice (Enter -1 to quit)"
+
+    //exit if sentinelValue entered
+    if addInChoice == sentinelValue 
+        break
+    endif
+
+    //add choices and respond if incorrect input
+    if addInChoice < 0 or addInChoice >= lenth(addInProduct)
+        print "Sorry we do not have that."
+    else
+        addInSum = addInSum + addInPrice[addInChoice]
+        print "Added " + addInProduct[addInChoice] + " - $" addInPrice[addInChoice]
+    endif
+
+endwhile
+
+//calculate total and display it
+totalPrice = addInSum + cupCoffeePrice
+print "Your total is:" + totalPrice
+
+end
