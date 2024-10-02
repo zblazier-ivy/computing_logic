@@ -1,0 +1,37 @@
+start
+
+//declarations
+yearsLeft = 0
+annualSavings = 0
+interestRate = .03
+balance = 0
+retirementSpending = 60000
+sentinelValue = -1
+
+while sentinelValue <> -1 do
+
+    input yearsLeft = "Enter the number of years left until retirement. (Enter -1 to quit)"
+
+    if yearsLeft == -1 
+        break // exit if sentinelValue entered
+    end if
+
+    input annualSavings = "Enter the amount you can save every year"
+    
+    balance = 0 //reset balance for starting over
+    for count = 1 to yearsLeft 
+        balance = (balance + annualSavings) * (1 * interestRate)
+    end for
+
+    for count = 1 to 30 step 1
+        if balance > 0 
+            balance = (balance - retirementSpending) * (1 * interestRate)
+            output "Year " + count + " Balance:$" + balance"
+        else
+            outpput "year " + count + " Balance: $0"
+            break
+        end if
+
+    input sentinelValue = "Enter -1 to quit or any other number to start over."
+
+end

@@ -1,0 +1,15 @@
+start
+
+//declarations
+numberSum = 0
+numberEntered = -1
+
+while numberEntered <> 0
+    input numberEntered = "Enter a number: (Enter 0 to quit)" // gather input from user
+    if numberEntered == 0 // check to see if 0 is entered
+        output "The sum of numbers entered is " + numberSum + "." //if 0 entered output results
+        break() //exit loop 
+    else // if numberEntered is anything other than 0
+        numberSum = numberSum + numberEntered //add to numberSum
+
+end
