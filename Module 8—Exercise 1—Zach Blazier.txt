@@ -1,0 +1,88 @@
+start
+
+//declarations
+InputFile geraldsFile
+InputFile geraldinesFile
+OutputFile mergedFile
+num custNumGerald
+string lastNameGerald
+string addressGerald
+num propertySizeGerald
+num custNumGeraldine
+string lastNameGeraldine
+string addressGeraldine
+num propertySizeGeraldine
+string END_NAME = "ZZZZZ"
+string areBothAtEnd = "N"
+
+//being process
+getReady()
+
+//loop until both files reach EOF
+while areBothAtEnd <> "Y"
+    mergeRecords()
+endwhile
+
+finishUp()
+
+end
+
+getReady()
+    //open relevant files
+    open geraldsFile "Geralds Businesses.csv"
+    open geraldinesFile "Geraldines Businesses.csv"
+    open mergedFile "combinedClients.csv"
+
+    //read input files
+    readGeraldsFile()
+    readGeraldinesFile()
+
+    //check if both files are at the end
+    checkEnd()
+return
+
+readGeraldsFile()
+    //read record from file
+    input custNumGerald, lastNameGerald, addressGerald, propertySizeGerald
+    if eof(geraldsFile) then
+        lastNameGerald = END_NAME
+    endif
+return
+
+readGeraldinesFile()
+    //read record from file
+    input custNumGeraldine, lastNameGeraldine, addressGeraldine, propertySizeGeraldine
+    if eof(geraldinesFile) then
+        lastNameGeraldine = END_NAME
+    endif
+return
+
+checkEnd()
+    //check if both files have ended
+    if lastNameGerald = END_NAME then and lastNameGeraldine = END_NAME then
+        areBothAtEnd = "Y"
+    endif
+return
+
+mergeRecords()
+    //compare records and write merged file
+    if custNumGerald < custNumGeraldine then
+        output custNumGerald, lastNameGerald, addressGerald, propertySizeGerald to mergedFile
+        readGeraldsFile()
+    else uf custNumGerald > custNumGeraldine
+        output custNumGeraldine, lastNameGeraldine, addressGeraldine, propertySizeGeraldine to mergedFile
+        readGeraldinesFile()
+    else //eliminate duplicate customer numbers
+        output custNumGerald, lastNameGerald, addressGerald, propertySizeGerald to mergedFile
+        readGeraldsFile()
+        readGeraldinesFile()
+    endif
+    checkEnd()
+return
+
+finishUp()
+    // close all files
+    close geraldsFile
+    close geraldinesFile
+    close mergedFile
+return
